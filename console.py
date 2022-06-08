@@ -22,7 +22,7 @@ album_3 = Album("III", "Electronic", artist_1)
 album_repository.save(album_3)
 
 #Find Artists/Albums by their ID (select)
-print(album_repository.select(80))
+#print(album_repository.select(album_2.id))
 
 #List All Artists
 all_artists = artist_repository.select_all()
@@ -33,18 +33,19 @@ for artist in all_artists:
 all_albums = album_repository.select_all()
 for album in all_albums:
     print(album.__dict__)
+    print(album.artist.__dict__)
 
 #List all the albums by an artist
-print(artist_repository.albums(72))
+#print(artist_repository.albums(artist_1.id))
 
 #Edit Artists/Albums
-album_3 = Album("More D4ta", "Electronic", artist_1)
-album_repository.update(album_3)
-print(album.__dict__)
+# album_3 = Album("More D4ta", "Electronic", artist_1)
+# album_repository.update(album_3)
+# print(album.__dict__)
 
 #Delete Artists/Albums
-albums = album_repository.delete(67)
-for album in albums:
-    print(album.__dict__)
+#albums = album_repository.delete(album_3.id)
+#for album in albums:
+#    print(album.__dict__)
 
 pdb.set_trace()

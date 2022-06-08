@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 
-from models.artist import Artist
 from models.album import Album
+from models.artist import Artist
 import repositories.artist_repository as artist_repository
 
 def save(album):
@@ -24,7 +24,7 @@ def select(id):
 
     if results is not None:
         artist = artist_repository.select(results['artist_id'])
-        album = Album(results['title'], results['genre'],artist, results['id'])
+        album = Album(results['title'], results['genre'], artist, results['id'])
     return album
 
 def select_all():
